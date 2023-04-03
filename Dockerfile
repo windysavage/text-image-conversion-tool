@@ -19,7 +19,7 @@ RUN pip install \
     --requirement requirements.txt
 
 RUN mkdir -p /app
-COPY . /app
+# COPY . /app
 
 WORKDIR /app
 
