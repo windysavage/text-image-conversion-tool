@@ -5,7 +5,7 @@ from django.http import (
 from lugia.settings import FACEBOOK_WEBHOOK_TOKEN
 
 
-def webhook_view(
+def messenger_webhook_view(
     request,
 ):
     query_dict = request.GET

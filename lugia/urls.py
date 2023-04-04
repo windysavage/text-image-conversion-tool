@@ -31,4 +31,5 @@ urlpatterns = [
         include("fly.urls"),
     ),
     path("", include("messenger.urls")),
+    path("", include("line.urls")),
 ]

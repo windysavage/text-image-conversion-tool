@@ -3,13 +3,13 @@ from django.urls import (
 )
 
 from .views import (
-    webhook_view,
+    messenger_webhook_view,
 )
 
 urlpatterns = [
     path(
         "messenger_webhook",
-        webhook_view,
+        messenger_webhook_view,
         name="messenger_webhook",
     ),
 ]
