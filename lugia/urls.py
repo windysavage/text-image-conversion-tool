@@ -29,5 +29,6 @@ urlpatterns = [
     path(
         "",
         include("fly.urls"),
-    ),  # new
+    ),
+    path("", include("messenger.urls")),
 ]
