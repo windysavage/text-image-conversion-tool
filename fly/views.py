@@ -6,4 +6,4 @@ from django.http import (
 def homePageView(
     request,
 ):
-    return HttpResponse("Hello, ffy~~~!")
+    return HttpResponse("Hello, fly~~~!")
