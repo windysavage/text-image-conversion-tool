@@ -11,9 +11,10 @@ from django.http import (
 from django.views.decorators.csrf import csrf_exempt
 from linebot import LineBotApi
 from linebot.models import TextSendMessage
-from linebot.exceptions import LineBotApiError
+import funcy as fy
 
 from lugia.settings import CHANNEL_SECRET, CHANNEL_ACCESS_TOKEN
+from utils.openai import OpenAI
 
 
 stdout_handler = logging.StreamHandler(sys.stdout)
@@ -26,6 +27,8 @@ logging.basicConfig(
 )
 
 logger = logging.getLogger(__name__)
+
+openai = OpenAI()
 
 
 @csrf_exempt
@@ -59,8 +62,19 @@ def reply(request):
     for event in events:
         reply_token = event.get("replyToken")
 
-        if not reply_token or event.get("type") != "message":
+        if (
+            not reply_token
+            or event.get("type") != "message"
+            or fy.get_in(event, ["message", "type"]) != "text"
+        ):
             continue
 
+        query = fy.get_in(event, ["message", "text"])
+        answer = _get_chat_resp(query)
+
         line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
-        line_bot_api.reply_message(reply_token, TextSendMessage(text="Hello World!"))
+        line_bot_api.reply_message(reply_token, TextSendMessage(text=answer))
+
+
+def _get_chat_resp(query):
+    return openai.chat(query)
