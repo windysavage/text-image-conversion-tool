@@ -1,0 +1,24 @@
+repos:
+-   repo: https://github.com/pre-commit/mirrors-autopep8
+    rev: v1.5.3
+    hooks:
+    -   id: autopep8
+
+-   repo: https://github.com/pycqa/flake8
+    rev: 4.0.1
+    hooks:
+    -   id: flake8
+        args: [
+          '--ignore=F405,F403,E226,,E226,W504,W503,E121,E126,E211,E225,E501,E203,E402,F401,F811,E231'
+        ]
+
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+    -   id: check-added-large-files
+        args: ['--maxkb=1024']
+    - id: trailing-whitespace
+    - id: end-of-file-fixer
+    - id: check-xml
+    - id: check-json
+    - id: check-yaml
