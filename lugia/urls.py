@@ -26,10 +26,5 @@ urlpatterns = [
         "admin/",
         admin.site.urls,
     ),
-    path(
-        "",
-        include("fly.urls"),
-    ),
-    path("", include("messenger.urls")),
     path("", include("line.urls")),
 ]
