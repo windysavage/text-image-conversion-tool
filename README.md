@@ -11,13 +11,13 @@ make shell
 ```
 run the service on localhost:8000 (via docker)
 ```shell
-make web-start
+make local-web-start
 ```
 stop the service on localhost:8000 (via docker)
 ```shell
-make web-stop
+make local-web-stop
 ```
 deploy the service on localhost:8000 (via scripts)
 ```shell
-make deploy
+make local-deploy
 ```
