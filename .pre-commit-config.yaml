@@ -30,3 +30,13 @@ repos:
     - id: check-xml
     - id: check-json
     - id: check-yaml
+
+-   repo: local
+    hooks:
+    -   id: pytest
+        name: pytest
+        stages: [commit]
+        language: system
+        entry: python -m pytest -vv tests
+        types: [python]
+        always_run: true

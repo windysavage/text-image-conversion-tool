@@ -1,5 +1,20 @@
 # text-image-conversion-tool
 
+## How to install this repo
+1. build a python virtual env with python=3.10
+```shell
+conda create --name venv python=3.10
+```
+2. activate the venv and install packages
+```shell
+conda activate venv
+pip install -r requirements.txt
+```
+3. intsall pre-commit
+```shell
+pre-commit install
+```
+
 ## Useful Command
 build docker image
 ```shell
