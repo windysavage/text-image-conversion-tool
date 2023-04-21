@@ -1,0 +1,8 @@
+name: Checkout working directory to triggered commits
+on:
+  workflow_call:
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3

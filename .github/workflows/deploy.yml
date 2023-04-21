@@ -1,0 +1,25 @@
+name: Deploy
+on:
+  push:
+    branches: main
+
+jobs:
+  checkout:
+    uses: ./.github/workflows/ci-checkout.yml
+
+  # test:
+    # runs-on: ubuntu-latest
+    # steps:
+    #   - name: Checkout
+    #     uses: actions/checkout@v2
+    #   - name: set up python
+    #     uses: actions/setup-python@v2
+    #     with:
+    #       python-version: '3.9.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+    #       architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+    #   - name: install pipenv
+    #     run: python -m pip install --upgrade pipenv wheel
+    #   - name: install packages
+    #     run: pip install -r requirements.txt
+    #   - name: test
+    #     run: make test
