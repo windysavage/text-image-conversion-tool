@@ -3,6 +3,7 @@ on:
   workflow_call:
 jobs:
   setup:
+    runs-on: ubuntu-latest
     steps:
       - name: setup python
         uses: actions/setup-python@v4
