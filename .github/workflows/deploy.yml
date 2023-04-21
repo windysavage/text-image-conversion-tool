@@ -15,5 +15,7 @@ jobs:
           architecture: 'x64'
       - name: install packages
         run: pip install -r requirements.txt
+      - name: copy settings
+        run: cp lugia/settings.py-prod lugia/settings.py
       - name: run tests
         run: make test
