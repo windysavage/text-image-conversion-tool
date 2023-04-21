@@ -1,8 +1,22 @@
 repos:
--   repo: https://github.com/pre-commit/mirrors-autopep8
-    rev: v1.5.3
+# -   repo: https://github.com/pre-commit/mirrors-autopep8
+#     rev: v1.5.3
+#     hooks:
+#     -   id: autopep8
+
+-   repo: https://github.com/psf/black
+    rev: 23.3.0
     hooks:
-    -   id: autopep8
+    -   id: black
+        name: black
+        description: "Black: The uncompromising Python code formatter"
+        entry: black
+        language: python
+        minimum_pre_commit_version: 2.9.2
+        require_serial: true
+        types_or: [python, pyi]
+        skip-string-normalization: false
+        skip-numeric-underscore-normalization: true
 
 -   repo: https://github.com/pycqa/flake8
     rev: 4.0.1
