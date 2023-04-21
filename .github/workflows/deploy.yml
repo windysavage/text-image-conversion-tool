@@ -7,6 +7,9 @@ jobs:
   checkout:
     uses: ./.github/workflows/ci-checkout.yml
 
+  setup:
+    uses: ./.github/workflows/ci-setup.yml
+
   # test:
     # runs-on: ubuntu-latest
     # steps:
