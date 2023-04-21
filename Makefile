@@ -12,3 +12,6 @@ local-web-stop:
 
 local-deploy:
 	gunicorn --bind 127.0.0.1:8000 --workers 1 lugia.wsgi
+
+test:
+	python -m pytest tests -vv

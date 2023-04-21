@@ -132,3 +132,5 @@ dmypy.json
 */settings.py
 fly.toml
 .vscode
+.DS_Store
+toy*
